@@ -20,13 +20,14 @@ let
 in
 {
   home-manager.users.${username} = { config, ... }: {
+    systemd.user.startServices = "suggest";
     services.mpd = {
       enable = true;
       musicDirectory = "/run/media/${config.home.username}/1000xhome/backup-everything/FB2K/Library Historyfied!";
       dbFile = "${config.home.homeDirectory}/.config/mpd/database";
       dataDir = "${config.home.homeDirectory}/.config/mpd";
       playlistDirectory = "${config.home.homeDirectory}/.config/mpd/playlists";
-      network.startWhenNeeded = true;
+      network.startWhenNeeded = false;
       extraConfig = ''
         auto_update "yes"
         
