@@ -40,23 +40,23 @@ in
       '';
     };
 
-    systemd.user.services.listenbrainz-mpd-90-no4m = {
-      Unit = {
-        Description = "ListenBrainz MPD Client (90% Threshold, No 4m Limit)";
-        After = [ "mpd.service" ];
-        Wants = [ "mpd.service" ];
-      };
-      Service = {
-        ExecStart = "${listenbrainz-mpd-90-no4m}/bin/listenbrainz-mpd";
-        Restart = "on-failure";
-        RestartSec = "5s";
-        Environment = [
-          "XDG_CONFIG_HOME=${config.home.homeDirectory}/.config"
-          "LISTENBRAINZ_MPD_LOG=debug"
-        ];
-      };
-      Install.WantedBy = [ "default.target" ];
-    };
+    # systemd.user.services.listenbrainz-mpd-90-no4m = {
+    #   Unit = {
+    #     Description = "ListenBrainz MPD Client (90% Threshold, No 4m Limit)";
+    #     After = [ "mpd.service" ];
+    #     Wants = [ "mpd.service" ];
+    #   };
+    #   Service = {
+    #     ExecStart = "${listenbrainz-mpd-90-no4m}/bin/listenbrainz-mpd";
+    #     Restart = "on-failure";
+    #     RestartSec = "5s";
+    #     Environment = [
+    #       "XDG_CONFIG_HOME=${config.home.homeDirectory}/.config"
+    #       "LISTENBRAINZ_MPD_LOG=debug"
+    #     ];
+    #   };
+    #   Install.WantedBy = [ "default.target" ];
+    # };
 
     home.file = {
       ".config/rmpc".source = config.lib.file.mkOutOfStoreSymlink "${dot}/.config/rmpc";

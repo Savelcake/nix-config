@@ -11,12 +11,12 @@
     ./modules/environment.nix
 
     ./modules/tilde.nix
-    ./modules/virtualization.nix
 
     ./modules/home-manager.nix
     ./modules/theme.nix
 
     ./modules/packages.nix
+    ./modules/wsl.nix
 
     # Programs
     (lib.pipe inputs.import-tree[

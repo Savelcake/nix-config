@@ -11,4 +11,6 @@
     # Register support for executing Windows binaries (such as code.exe or explorer.exe)
     interop.register = true;
   };
+
+  nixpkgs.hostPlatform = "x86_64-linux";
 }

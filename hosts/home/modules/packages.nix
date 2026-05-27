@@ -27,19 +27,8 @@
     openssl
 
     # Desktop
-    fuzzel
-    mako
     libnotify
-    awww
-    xremap
-    hyprshot
-    hyprpicker
     wl-clipboard
-    bitwarden-desktop
-    gnome-calculator
-    gnome-clocks
-    nicotine-plus
-    plugdata
 
     # Terminal Programs
     foot
@@ -77,9 +66,6 @@
     intermodal
     aria2
 
-    # Web
-    ayugram-desktop
-
     # Themes and Icons
     nwg-look
     adwaita-icon-theme
@@ -88,9 +74,5 @@
     nh
     nvd
     nix-output-monitor
-
-    # Flake Inputs
-    inputs.nvibrant.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

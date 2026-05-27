@@ -7,11 +7,6 @@
     home-manager.url = "github:nix-community/home-manager";
     import-tree.url = "github:vic/import-tree";
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    # photogimp.url = "github:Libadoxon/nix-photo-gimp";
-    xremap.url = "github:xremap/nix-flake";
-    nvibrant.url = "github:mikaeladev/nix-nvibrant";
-
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -35,7 +30,7 @@
       };
       modules = [
       ./default.nix
-      nixos-wsl.nixosModules.default
+      inputs.nixos-wsl.nixosModules.default
       ];
     };
   };
