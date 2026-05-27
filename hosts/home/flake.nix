@@ -12,7 +12,10 @@
     xremap.url = "github:xremap/nix-flake";
     nvibrant.url = "github:mikaeladev/nix-nvibrant";
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, nixpkgs-stable, ... }@inputs:
@@ -30,7 +33,10 @@
           config.allowUnfree = true;
         };
       };
-      modules = [ ./default.nix ];
+      modules = [
+      ./default.nix
+      nixos-wsl.nixosModules.default
+      ];
     };
   };
 }

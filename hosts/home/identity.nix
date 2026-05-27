@@ -1,6 +1,6 @@
 {
-  username = "lewelove";
+  username = "hidlers";
   hostname = "home";
-  email = "lewelove@proton.me";
-  repoPath = "/home/lewelove/nix-config";
+  email = "savelponomar@gmail.com";
+  repoPath = "/home/hidlers/nix-config";
 }

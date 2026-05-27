@@ -8,22 +8,15 @@
     ./user.nix
 
     # Modules
-    ./modules/boot.nix
     ./modules/environment.nix
 
-    ./modules/hardware-configuration.nix
-    ./modules/nvidia.nix
-
     ./modules/tilde.nix
-    ./modules/networking.nix
-    ./modules/bluetooth.nix
     ./modules/virtualization.nix
 
     ./modules/home-manager.nix
     ./modules/theme.nix
 
     ./modules/packages.nix
-    ./modules/games.nix
 
     # Programs
     (lib.pipe inputs.import-tree[
