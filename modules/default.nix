@@ -6,5 +6,8 @@
     ./system.nix
     ./programs.nix
     ./user.nix
+
+    ../programs/v2raya.nix
+    # ../programs/sing-box.nix
   ];
 }
