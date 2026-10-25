@@ -19,9 +19,31 @@
 
       git
       nvim
-      chromium
       v2raya
       sing-box
+
+      fish
+      starship
+      fuzzel
+      polkit-agent
+
+      cliphist
+      thunar
+      datamile
+      photocraft
+
+      discord
+      ayugram
+      steam
+      pi
+
+      web-apps
+
+      mpd
+      rmpc
+      mpc
+      mympd
+      mympd-web-app
     ]);
   };
 }

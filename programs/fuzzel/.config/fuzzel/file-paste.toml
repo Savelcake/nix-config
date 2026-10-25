@@ -1,0 +1,34 @@
+[files]
+
+datamile = {
+  run = "repomix ~/dev/datamile --quiet && repomix ~/.config/datamile --quiet",
+  paste = [
+  "~/Folders/XML Packed/~-dev-datamile.xml",
+  "~/Folders/XML Packed/~-.config-datamile.xml"
+  ]
+}
+
+nix-config = {
+  run = "repomix ~/nix-config --quiet",
+  paste = [ "~/Folders/XML Packed/~-nix-config.xml" ]
+}
+
+"starve!" = {
+  run = "repomix ~/dev/dst_mods/starve! --quiet",
+  paste = [ "~/Folders/XML Packed/~-dev-dst_mods-starve!.xml" ]
+}
+
+album_curation = {
+  run = "repomix ~/dev/album_curation --quiet",
+  paste = [
+  "~//Folders/XML Packed/~-dev-album_curation.xml",
+  ]
+}
+
+# mute = {
+#   run = "repomix ~/dev/mute --quiet && repomix ~/.config/mute --quiet",
+#   paste = [
+#   "~/Folders/XML Packed/~-dev-mute.xml",
+#   "~/Folders/XML Packed/~-.config-mute.xml"
+#   ]
+# }
