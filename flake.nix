@@ -1,19 +1,37 @@
 {
-  description = "Minimal dendritic NixOS config";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
   };
 
-  outputs = { nixpkgs, disko, ... }: {
-    nixosConfigurations.home = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        disko.nixosModules.disko
-        ./modules
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
+
+      imports = (map inputs.import-tree [
+        ./core
+        ./features
+        ./programs
+      ]) ++ [
+        (inputs.import-tree.filter (path:
+          let
+            base = builtins.baseNameOf (toString path);
+            parent = builtins.baseNameOf (builtins.dirOf (toString path));
+          in
+            base == "${parent}.nix"
+        ) ./hosts)
       ];
     };
-  };
 }

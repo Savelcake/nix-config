@@ -9,12 +9,5 @@
 
   environment.systemPackages = with pkgs; [
     wl-clipboard
-    ungoogled-chromium
-
-    git
-
-    neovim
-    gcc
-    tree-sitter
   ];
 }

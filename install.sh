@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-nixos-install --flake .#nixos --no-root-password
+nixos-install --flake .#home --no-root-password
