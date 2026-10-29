@@ -39,11 +39,11 @@
 
       web-apps
 
-      mpd
-      rmpc
-      mpc
-      mympd
-      mympd-web-app
+      # mpd
+      # rmpc
+      # mpc
+      # mympd
+      # mympd-web-app
     ]);
   };
 }
