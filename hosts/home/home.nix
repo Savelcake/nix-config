@@ -20,7 +20,6 @@
       git
       nvim
       v2raya
-      sing-box
 
       fish
       starship
